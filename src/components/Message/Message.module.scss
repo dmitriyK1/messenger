@@ -1,0 +1,54 @@
+.message {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px 16px 2px 8px;
+  flex: 0 0 auto;
+
+  &.mine {
+    flex-direction: row;
+    border-right-width: 8px;
+    border-left-width: 16px;
+
+    .text {
+      background: none;
+      color: white;
+    }
+  }
+
+  &:first-child {
+    border-top-width: 10px;
+  }
+
+  &:last-child {
+    border-bottom-width: 10px;
+  }
+
+  &:before {
+    content: "";
+    flex: 1;
+    background: white;
+    pointer-events: none;
+  }
+}
+
+.text {
+  background: #eee;
+  padding: 8px;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    bottom: -8px;
+    right: -8px;
+    border: 8px solid white;
+    border-radius: 16px;
+    pointer-events: none;
+  }
+}
